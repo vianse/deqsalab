@@ -1,0 +1,40 @@
+<header>
+
+
+        <!-- NAVIGATION -->
+        <div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 112px;"><nav id="sticker" class="navbar navbar-default">
+          <!-- CONTAINER -->
+          <div class="container">
+            <!-- NAVBAR HEADER -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> 
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="ion-android-menu"></span>
+              </button>
+              <!-- LOGO -->
+              <a class="navbar-brand" href="index.html"><img class="img-responsive" alt="logo" src="https://res.cloudinary.com/ply/image/upload/v1485727886/logoDEQSA.png"></a> 
+            </div>
+
+            <!-- NAVBAR COLLAPSE -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav menu-inline navbar-right">
+          
+                <li>
+                <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
+                <% end %>
+                </li>
+                <li>
+                  <a href="#" class="btn btn-default">DESCARGAR</a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.COLLAPSE -->
+          </div>
+          <!-- /.CONTAINER -->
+        </nav></div><!-- /. NAVIGATION MENU -->
+      </header>

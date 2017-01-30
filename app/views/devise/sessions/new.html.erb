@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+         <meta charset="UTF-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+          <title>DEQSA lab</title>
+          
+          <!-- ================== BEGIN BASE CSS STYLE ================== -->
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+          <!-- ================== END BASE CSS STYLE ================== -->
+          <!-- ================== END PAGE LEVEL CSS STYLE ================== --> 
+          <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+<%= render "archivos/style" %>
+<%= render "archivos/header_upload" %>
+<style type="text/css">
+  .btn{
+       color: hsl(355, 30%, 92%)!important;
+       background-color: hsl(353, 64%, 53%)!important;
+       border-style: none;
+      }
+     
+  .btn  {
+          color: hsl(355, 30%, 92%);
+          background-color: hsl(353, 64%, 53%);
+          max-width: 80%;
+          font-size: 2rem;
+          font-weight: 700;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          cursor: pointer;
+          display: inline-block;
+          padding: 0.625rem 1.25rem;
+  }
+
+  .btn {
+        cursor: pointer!important; /* "hand" cursor */
+      }
+</style>
+<div class="row">
+  <div class="col-md-4 sidebar-line"></div>
+  <div class="col-md-4 sidebar-line">
+
+<h2>Iniciar sesión</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label "Ingresa tu correo electronico" %><br />
+    <%= f.email_field :email, autofocus: true, :class=> "form-control", :placeholder =>"example@empresa.com" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off", :class=> "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Entrar" ,:class=> "btn" %>
+  </div>
+<% end %>
+</div>
+<div class="col-md-4 sidebar-line"></div>
+</div>
+</html>

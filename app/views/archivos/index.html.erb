@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+         <meta charset="UTF-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+          <title>DEQSA lab</title>
+          
+          <!-- ================== BEGIN BASE CSS STYLE ================== -->
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+          <!-- ================== END BASE CSS STYLE ================== -->
+          <!-- ================== END PAGE LEVEL CSS STYLE ================== --> 
+          <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+  <!-- ================== BEGIN REACT JS ================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <!-- ================== FIN REACT JS ================== -->
+    <style type="text/css">
+      .contenedor{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      h2{
+        display: flex;
+        width: 50%;
+        font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+        color: hsl(0, 0%, 56%);
+        margin-left: 20px;
+      }
+      .header{
+        background-color: hsl(354, 85%, 53%);
+        color: white;
+      }
+      #system-search{
+
+        margin-left: 20px;
+        margin-right: 20px!important;
+      }
+      #tabla{
+        margin-left: 20px;
+        width: 97%;
+      }
+    </style>
+  <%= render "header" %>
+  <%= render "style" %>
+<div class="contenedor">
+  <h2>Bandeja de Archivos</h2>
+  <input id="system-search" class="form-control" placeholder="Escribe la palabra a buscar">
+  <table class="table table-list-search table-td-valign-middle" id="tabla">
+    <thead class="header">
+      <tr>
+        <th></th>
+        <th>Fecha</th>
+        <th>Folio</th>
+        <th>Cliente</th>
+        <th>Archivo</th>
+        <th>Referencia</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody class="table-list-search tbody">
+      <% @archivos.each do |archivo| %>
+        <tr class="table-list-search tbody tr">
+          <td><a href="<%= archivo.photo %>" class="" download><i class="fa fa-download fa-lg"></i> Descargar</a></td>
+          <td><%= archivo.fecha %></td>
+          <td><%= archivo.folio %></td>
+          <td><%= archivo.cliente %></td>
+          <td><%= archivo.nombre %></td>
+          <td><%= archivo.referencia %></td>
+          <td><%= link_to 'Eliminar', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+    //something is entered in search form
+    $('#system-search').keyup( function() {
+       var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Busqueda por: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+                
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No hay resultado para mostrar.</td></tr>');
+        }
+    });
+});
+</script>
+</html>

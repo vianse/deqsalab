@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+         <meta charset="UTF-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+          <title>DEQSA lab</title>
+          
+          <!-- ================== BEGIN BASE CSS STYLE ================== -->
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+          <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+          <!-- ================== END BASE CSS STYLE ================== -->
+          <!-- ================== END PAGE LEVEL CSS STYLE ================== --> 
+          <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+<%= render 'header_upload' %>
+<%= render 'style' %>
+<style type="text/css">
+  .contenedor{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+   
+  }
+  .sub>h1{
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+    color: hsl(0, 0%, 56%);
+  }
+  .btn{
+       color: hsl(355, 30%, 92%)!important;
+       background-color: hsl(353, 64%, 53%)!important;
+       border-style: none;
+      }
+     
+  .btn  {
+          color: hsl(355, 30%, 92%);
+          background-color: hsl(353, 64%, 53%);
+          max-width: 80%;
+          font-size: 2rem;
+          font-weight: 700;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          cursor: pointer;
+          display: inline-block;
+          padding: 0.625rem 1.25rem;
+  }
+
+
+  .btn {
+        cursor: pointer!important; /* "hand" cursor */
+      }
+</style>
+<div class="contenedor">
+  <div class="sub">
+    <h1>Archivo subido correctamente</h1>
+  </div>
+  <div class="boton">
+    <a href="/" class="btn">Continuar subiendo más archivos</a>
+  </div>
+</div>
+</html>

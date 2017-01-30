@@ -1,0 +1,18 @@
+development:
+  cloud_name: ply
+  api_key: '856632375652629'
+  api_secret: uZY3RZcg9-Q8mWyfubzdhWGGsN0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ply
+  api_key: '856632375652629'
+  api_secret: uZY3RZcg9-Q8mWyfubzdhWGGsN0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ply
+  api_key: '856632375652629'
+  api_secret: uZY3RZcg9-Q8mWyfubzdhWGGsN0
+  enhance_image_tag: true
+  static_image_support: false

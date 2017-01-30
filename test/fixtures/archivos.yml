@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: MyString
+  folio: MyString
+  cliente: MyString
+  archivo: MyString
+  referencia: MyString
+
+two:
+  fecha: MyString
+  folio: MyString
+  cliente: MyString
+  archivo: MyString
+  referencia: MyString
