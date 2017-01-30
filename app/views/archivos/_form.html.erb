@@ -78,20 +78,20 @@
         <% end %>
         <div class="field">
           <%= f.label "Selecciona una fecha" %><br>
-          <%= f.date_field :fecha, :class=>"form-control"  %>
+          <%= f.date_field :fecha, :class=>"form-control", :required => true %>
         </div>
         <div class="field">
           <%= f.label "Ingresa número de folio" %><br>
-          <%= f.text_field :folio, :class=>"form-control"  %>
+          <%= f.text_field :folio, :class=>"form-control", :required => true  %>
         </div>
         <div class="field">
           <%= f.label "Ingresa número de cliente" %><br>
-          <%= f.text_field :cliente, :class=>"form-control"  %>
+          <%= f.text_field :cliente, :class=>"form-control", :required => true  %>
         </div>
         <div class="field">
           <%= f.label "Elige un archivo" %>
           <%= f.hidden_field :photo, :id=>"archivo" %>
-          <%= f.file_field :photo,:class=>"form-control" %>
+          <%= f.file_field :photo,:class=>"form-control", :required => true %>
           <%= f.hidden_field :remote_photo_url, use_filename: true  %>         
         </div>
         <div class="field">
@@ -99,7 +99,7 @@
         </div>
         <div class="field">
           <%= f.label "Ingresa número de referencia" %><br>
-          <%= f.text_field :referencia , :class=>"form-control" %>
+          <%= f.text_field :referencia , :class=>"form-control", :required => true %>
         </div>
         <div class="actions">
           <%= f.submit "Subir documento", :class=>"btn btn-success" %>
