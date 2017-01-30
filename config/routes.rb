@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'control/index'
+
   resources :archivos
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'archivos#new'
+   root 'control#index'
 
    # Manejo de la API
 
