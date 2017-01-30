@@ -13,11 +13,11 @@ default: &default
 
 development:
   <<: *default
-  database: directorio_development
+  database: archivos_development
 
 test:
   <<: *default
-  database: directorio_test
+  database: archivos_test
 
 
 production:
